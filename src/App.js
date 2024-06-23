@@ -4,6 +4,7 @@ import Register from "./Register";
 import { Routes, Route, Link, NavLink, useLocation, useParams} from "react-router-dom";
 import { useAuth } from "./auth";
 import ProtectedRoute from "./ProtectedRoute";
+import './App.css'
 
 function App(){
   const auth = useAuth();

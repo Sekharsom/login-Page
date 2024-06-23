@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { useAuth } from "./auth";
 import useLocalStorage from "./useLocalStorage";
-
+import { Link } from "react-router-dom";
+import './App.css';
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -41,8 +42,9 @@ const Login = () => {
 
     return(
         <>
-        <div className="login-container">
-            <form className="login-form" onSubmit={handleSubmit}>
+        <div className="form-container">
+            <h1>Login Form</h1>
+            <form className="form" onSubmit={handleSubmit}>
                 <label htmlFor="email">Email</label>
                 <input name="email" id="email" type="email" placeholder="abc@gmail.com"
                 value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -54,6 +56,7 @@ const Login = () => {
                 <div className="success-message">{success && "Success message"}</div>
 
             </form>
+            <span>Don't have an account? <Link to='/register'>Sign up here!</Link></span>
 
         </div>
         </>

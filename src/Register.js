@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import useLocalStorage from "./useLocalStorage";
-import './App.css'
+import { Link } from "react-router-dom";
+import './App.css';
+
 const Register = (props) => {
     const [name, setName] = useState("");
     const [email,  setEmail] = useState("");
@@ -30,6 +32,9 @@ const Register = (props) => {
                 value={password} onChange={(e)=>setPassword(e.target.value)} required/>
                 <button className="register-button" type="submit">Register</button>
             </form>
+            <span>Already have an account? <Link to='/login'>Login here!</Link></span>
+            
+
         </div>
     )
 }
